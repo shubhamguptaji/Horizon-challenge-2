@@ -1,0 +1,26 @@
+"horizon-ui-react": "0.0.3" package unavailable at npm
+findDOMNode and this.refs depreciated error in files can be found by running npm run-script lint
+
+
+List of components not working:
+1. Accordion - images in Arrordion.less are unavailable
+2. ArrayAutoComplete - icon unavailable
+3. AutoComplete - 
+	 colors in Autocomplete.less are missing, defination required in src/common/theme/color.js
+	 required data missing
+4. navItem - horizon-ui-react npm package not available
+5. DropDown - colors in Dropdown.less are missing, defination required in src/common/theme/color.js
+6. TextArea - colors in TextArea.less are missing, defination required in src/common/theme/color.js
+7. WrappingGrid - colors in wrappingGrid.less are missing, defination required in src/common/theme/color.js
+8. ErrorModal - colors in ErrorModal.less are missing, defination required in src/common/theme/color.js
+9. FormBuilder - colors in formBuilder/sections/DefaultSectionView.less, formBuilder/fields/styles.less are missing, defination required in src/common/theme/color.js
+10. Separator - colors in separator/Line.less are missing, defination required in src/common/theme/color.js
+11.Tab - colors in tab/SubNavigation.less are missing, defination required in src/common/theme/color.js
+12.Text - colors in text/text.less are missing, defination required in src/common/theme/color.js
+13.RightSidebar.js  src/app/project/documents/helpers/TransacrionDocumentsHelper file not available
+14.ErrorBoundry.js, ErrorModal.js, RightSidebar.js  src/store files unavailable
+15.Tooltip file empty in src/commom/components
+16.ClientLegalEntity - requires Autocomplete and Dropdown whose requirements are not met
+17.CoAdvisor - requires Autocomplete and Dropdown whose requirements are not met
+18.files in src/utils/ are empty - Autocomplete.js, Button.js, IconButton.js, CheckboxGroup.js,  DatePicker.js, Dropdown.js, ErrorBoundry.js, ErrorModal.js, FocusTrap.js, FormBuilder/fields/ GroupList.js, List.js, Modal.js, RightSidebar.js, TabPanel.js
+19.FileIcon - icon images in FileIcon.js are unavailable (src/assets/img/fileIcons)
