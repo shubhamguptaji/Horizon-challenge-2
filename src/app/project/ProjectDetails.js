@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestApiData } from '../../store/action';
-import { Form, Grid, Checkbox, Divider, Select } from 'semantic-ui-react';
+import { Form, Grid, Checkbox, Divider } from 'semantic-ui-react';
 import { AutoComplete } from 'antd';
+import LegalEntity from './LegalEntity';
+import ProductDetails from './ProductDetails';
+import KYCDetails from './KYCDetails';
 
 const Option = AutoComplete.Option;
 
@@ -11,14 +14,15 @@ class ProjectDetails extends Component {
     super(props);
 
     this.state = {
-      str: '',
+      client: '',
       response: [],
-      showInputBox: true
+      showInputBox: true,
+      rcgValue: true
     };
   }
 
   onSelect = value => {
-    this.setState({ str: value });
+    this.setState({ client: value });
     console.log(this.state);
   };
 
@@ -29,91 +33,75 @@ class ProjectDetails extends Component {
     fetch(endpoint)
       .then(response => response.json())
       .then(data => {
-        this.setState({ response: data.response.employees });
+        this.setState({ response: data.response.clients });
       });
   };
-  render() {
-    const { productStage, products, category } = this.props;
+
+  handleCheckbox = () => {
+    const oldState = this.state.client;
+    // if (oldState === 'CONFIDENTIAL') this.setState({ client: '' });
+    if (this.state.client === 'CONFIDENTIAL')
+      this.setState({ client: oldState });
+    else this.setState({ client: 'CONFIDENTIAL' });
+    this.setState({ showInputBox: !this.state.showInputBox });
     console.log(this.state);
+  };
+
+  render() {
     const children = this.state.response.map(item => (
-      <Option key={item.id}>{item.firstName}</Option>
+      <Option
+        key={item.id}
+        disabled={item.ibcmNewProjectFlag === 'uncovered' ? true : false}
+      >
+        {item.id}
+        {'  '}
+        {item.legalName}
+      </Option>
     ));
+
     return (
       <div>
-        <Form>
-          <Grid columns="2">
-            {this.state.showInputBox === true ? (
-              <Grid.Row>
-                <Grid.Column width="3">Client</Grid.Column>
-                <Grid.Column width="6">
-                  <AutoComplete
-                    autoFocus={true}
-                    backfill={true}
-                    onChange={this.handleChange}
-                    onSelect={this.onSelect}
-                    style={{ width: '100%' }}
-                  >
-                    {children}
-                  </AutoComplete>
-                </Grid.Column>
-              </Grid.Row>
-            ) : (
-              <div />
-            )}
-            <Grid.Row style={{ marginTop: -15 }}>
-              <Grid.Column width="3" />
+        <Grid columns="2">
+          {this.state.showInputBox === true ? (
+            <Grid.Row>
+              <Grid.Column width="3">Client</Grid.Column>
               <Grid.Column width="6">
-                <Form.Field>
-                  <Checkbox label="No client (For highly confidential projects)" />
-                </Form.Field>
+                <AutoComplete
+                  autoFocus={true}
+                  backfill={true}
+                  onChange={this.handleChange}
+                  onSelect={this.onSelect}
+                  style={{ width: '100%' }}
+                >
+                  {children}
+                </AutoComplete>
               </Grid.Column>
             </Grid.Row>
-            <Divider />
-            <Grid.Row>
-              <Grid.Column width="3">Product Category</Grid.Column>
-              <Grid.Column width="6">
-                <Form.Field
-                  control={Select}
-                  options={category}
-                  placeholder="Select a category..."
+          ) : (
+            <Grid.Row />
+          )}
+          <Grid.Row style={{ marginTop: -15 }}>
+            <Grid.Column width="3" />
+            <Grid.Column width="6">
+              <Form.Field>
+                <Checkbox
+                  label="No client (For highly confidential projects)"
+                  onChange={this.handleCheckbox}
                 />
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column width="3">Product</Grid.Column>
-              <Grid.Column width="6">
-                <Form.Field
-                  control={Select}
-                  placeholder="Select a product..."
-                  options={products}
-                />
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column width="3">Project Name</Grid.Column>
-              <Grid.Column width="6">
-                <Form.Field control="input" placeholder="Add Project Name" />
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row style={{ marginTop: -15 }}>
-              <Grid.Column width="3" />
-              <Grid.Column width="6">
-                NOTE: Project name can be changed later. The project code will
-                be assigned when you save this project.
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column width="3">Product Stage</Grid.Column>
-              <Grid.Column width="6">
-                <Form.Field
-                  control={Select}
-                  placeholder="Stage project is currently at..."
-                  options={productStage}
-                />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Form>
+              </Form.Field>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+        {this.state.rcgValue === true ? <LegalEntity /> : <Grid.Row />}
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width="16">
+              <Divider />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+        <KYCDetails />
+        <ProductDetails />
       </div>
     );
   }
