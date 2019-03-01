@@ -1,12 +1,12 @@
 import React ,{Component} from 'react'
 import { Grid, Divider, Icon, Form, Button, Input } from 'semantic-ui-react'
-
+const CLIENTS_SECTOR="Client's Sector"
 class Subcomponent extends Component{
  
     render()
     {
         return(
-            <div Style={{margin:"40px"}}> 
+            <div Style={{marginTop:"40px"}}> 
               {console.log(this.props.count+"count")}
               {  Array.apply(null,{length:this.props.count}).map((e,i) => 
                     
@@ -51,7 +51,7 @@ export default class ClientSector extends Component{
                 {console.log(this.state.reportingsector)}
                 <Grid columns="3">
                 <Grid.Row>
-                    <Grid.Column width="3">Client's Sector</Grid.Column>
+                    <Grid.Column width="3">{CLIENTS_SECTOR}</Grid.Column>
                     <Grid.Column width="6">
                     <Form.Input placeholder="UNCOVERED" type="text" style={{width:"100%"}}></Form.Input>
                     </Grid.Column>
