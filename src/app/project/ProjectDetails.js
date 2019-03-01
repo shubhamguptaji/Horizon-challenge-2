@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { requestApiData } from '../../store/action';
 import { Form, Grid, Checkbox, Divider } from 'semantic-ui-react';
 import { AutoComplete } from 'antd';
 import LegalEntity from './LegalEntity';
@@ -107,17 +105,4 @@ class ProjectDetails extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return state;
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    requestApiData: query => dispatch(requestApiData(query))
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ProjectDetails);
+export default ProjectDetails;

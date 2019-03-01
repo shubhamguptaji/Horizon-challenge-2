@@ -29,6 +29,7 @@ class LegalEntity extends Component {
                   control={Select}
                   placeholder="Select a legal Entity..."
                   style={{ width: '100%' }}
+                  error
                   onSelect={() => {
                     this.setState({ buttonDisabled: false });
                   }}
