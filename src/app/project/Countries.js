@@ -4,7 +4,7 @@ import { Grid, Form, Select, Button } from 'semantic-ui-react';
 export default class Countries extends Component {
   state = {
     count: 0,
-    disabled: false
+    disabled: true
   };
   render() {
     const { primaryCountry, secondaryCountry } = this.props;
