@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Accordion, Divider, Grid, Icon } from 'semantic-ui-react';
 import ProjectDetails from './ProjectDetails';
 import DealDetails from './DealDetails';
+import ClientSector from './ClientSector';
 
 export default class CreateNewProject extends Component {
-  state = { activeIndex: 0 };
+  state = { activeIndex: 4 };
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -82,7 +83,7 @@ export default class CreateNewProject extends Component {
                 <Icon name="dropdown" style={{ float: 'right' }} />
               </Accordion.Title>
               <Accordion.Content active={activeIndex === 4}>
-                <p />
+               <ClientSector/>
               </Accordion.Content>
             </Accordion>
           </Grid.Row>
