@@ -7,7 +7,8 @@ export default class KYCDetails extends Component {
     return (
       <Grid columns="2">
         <Grid.Row>
-          <Grid.Column width="3">Client ID/KYC Status</Grid.Column>
+          <Grid.Column width="1" />
+          <Grid.Column width="2">Client ID/KYC Status</Grid.Column>
           <Grid.Column width="6">
             <Form.Field
               control={Select}
@@ -22,7 +23,8 @@ export default class KYCDetails extends Component {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width="3">Client ID/KYC Status Comment</Grid.Column>
+          <Grid.Column width="1" />
+          <Grid.Column width="2">Client ID/KYC Status Comment</Grid.Column>
           <Grid.Column width="6">
             <Form.Field
               control={TextArea}

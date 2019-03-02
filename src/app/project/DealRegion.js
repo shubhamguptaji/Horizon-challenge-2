@@ -11,7 +11,8 @@ export default class DealRegion extends Component {
     return (
       <Grid columns="2">
         <Grid.Row>
-          <Grid.Column width="3">Deal Region</Grid.Column>
+          <Grid.Column width="1" />
+          <Grid.Column width="2">Deal Region</Grid.Column>
           <Grid.Column width="6">
             <Form.Group inline>
               <Form.Field

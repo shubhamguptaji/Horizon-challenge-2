@@ -32,6 +32,7 @@ export default class DealDetails extends Component {
     ProjectStage: 'Mandate',
     MandateDate: moment(),
     EngagementLetterDate: '',
+    EngagementDate: moment(),
     AnnounceDate: moment(),
     ClosingDate: moment(),
     CommitmentDate: moment(),
@@ -43,6 +44,12 @@ export default class DealDetails extends Component {
   handleMandateDate = moment => {
     this.setState({
       MandateDate: moment
+    });
+  };
+
+  handleEngagementDate = moment => {
+    this.setState({
+      EngagementDate: moment
     });
   };
 
@@ -87,6 +94,7 @@ export default class DealDetails extends Component {
         <Form>
           <Grid columns="2">
             <Grid.Row>
+              <Grid.Column width="1" />
               <Grid.Column width="9">
                 Please select the countries involved in the execution of the
                 transaction (i.e. which CS legal entity will execute the deal?
@@ -102,7 +110,8 @@ export default class DealDetails extends Component {
           <ProductType />
           <Grid columns="2">
             <Grid.Row>
-              <Grid.Column width="3">Financing Purpose</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Financing Purpose</Grid.Column>
               <Grid.Column width="6">
                 <Form.Group inline>
                   <Form.Field
@@ -123,7 +132,8 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Hostile/Unsolicited</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Hostile/Unsolicited</Grid.Column>
               <Grid.Column width="6">
                 <Form.Group inline>
                   <Form.Field
@@ -144,7 +154,8 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Special Committee</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Special Committee</Grid.Column>
               <Grid.Column width="6">
                 <Form.Group inline>
                   <Form.Field
@@ -168,7 +179,8 @@ export default class DealDetails extends Component {
           <CSRole />
           <Grid columns="2">
             <Grid.Row>
-              <Grid.Column width="3"> Co-Advisor</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2"> Co-Advisor</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field control={Select} />
               </Grid.Column>
@@ -206,13 +218,15 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Transaction Description</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Transaction Description</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field control={TextArea} />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">
+              <Grid.Column width="1" />
+              <Grid.Column width="2">
                 Current Transaction Status (Notes)
               </Grid.Column>
               <Grid.Column width="6">
@@ -220,7 +234,8 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Deal Currency & size</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Deal Currency & size</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field control={Select} />
               </Grid.Column>
@@ -235,7 +250,7 @@ export default class DealDetails extends Component {
                   onChange={this.handleDealSize}
                 />
               </Grid.Column>
-              <Grid.Column>Millions</Grid.Column>
+              <Grid.Column width="1">Millions</Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column width="3" />
@@ -246,10 +261,11 @@ export default class DealDetails extends Component {
                   disabled
                 />
               </Grid.Column>
-              <Grid.Column>$M (Rate)</Grid.Column>
+              <Grid.Column width="1">$M (Rate)</Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">CS Providing Financing</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">CS Providing Financing</Grid.Column>
               <Grid.Column width="6">
                 <Form.Group inline>
                   <Form.Field
@@ -271,7 +287,8 @@ export default class DealDetails extends Component {
             </Grid.Row>
             {this.state.providingFinancing === 'Yes' ? (
               <Grid.Row>
-                <Grid.Column width="3">Link to another CS Project</Grid.Column>
+                <Grid.Column width="1" />
+                <Grid.Column width="2">Link to another CS Project</Grid.Column>
                 <Grid.Column width="6">
                   <Form.Field control={Select} placeholder="Select a Date" />
                 </Grid.Column>
@@ -281,7 +298,8 @@ export default class DealDetails extends Component {
             )}
             {this.state.providingFinancing === 'Yes' ? (
               <Grid.Row>
-                <Grid.Column width="3">Pro-Rata Size</Grid.Column>
+                <Grid.Column width="1" />
+                <Grid.Column width="2">Pro-Rata Size</Grid.Column>
                 <Grid.Column width="6">
                   <Form.Field
                     control={Input}
@@ -297,7 +315,8 @@ export default class DealDetails extends Component {
             )}
             {this.state.providingFinancing === 'Yes' ? (
               <Grid.Row>
-                <Grid.Column width="3">Institutional Size</Grid.Column>
+                <Grid.Column width="1" />
+                <Grid.Column width="2">Institutional Size</Grid.Column>
                 <Grid.Column width="6">
                   <Form.Field
                     control={Input}
@@ -312,7 +331,8 @@ export default class DealDetails extends Component {
               <div />
             )}
             <Grid.Row>
-              <Grid.Column width="3">
+              <Grid.Column width="1" />
+              <Grid.Column width="2">
                 HOLT Corporate Advisory
                 <Icon
                   name="question circle outline"
@@ -350,7 +370,8 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Syndication Region</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Syndication Region</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field
                   control={Select}
@@ -365,7 +386,8 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">S&P/Moody</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">S&P/Moody</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field
                   control={Input}
@@ -387,7 +409,8 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">S&P</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">S&P</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field
                   control={Select}
@@ -396,13 +419,15 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Fitch</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Fitch</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field control={Select} placeholder="Select a rating..." />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Moodys</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Moodys</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field
                   control={Select}
@@ -411,39 +436,51 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">CS Legal Contact</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">CS Legal Contact</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field control={Select} />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Date Mandated</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Date Mandated</Grid.Column>
               <Grid.Column width="6">
-                <Form.Field
-                  control={Input}
-                  type="date"
-                  value={this.state.MandateDate}
-                  placeholder="Select a Date..."
-                  Icon={false}
-                />
                 <DatetimePickerTrigger
                   moment={this.state.MandateDate}
                   onChange={this.handleMandateDate}
-                />
+                >
+                  <Form.Field
+                    control={Input}
+                    moment={this.state.moment}
+                    value={this.state.MandateDate.format('YYYY-MM-DD')}
+                    placeholder="Select a Date..."
+                    Icon={false}
+                  />
+                </DatetimePickerTrigger>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Engagement Letter Date</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Engagement Letter Date</Grid.Column>
               <Grid.Column width="6">
-                <Form.Field
-                  control={Input}
-                  disabled
-                  value={this.state.EngagementLetterDate}
-                />
+                <DatetimePickerTrigger
+                  moment={this.state.EngagementDate}
+                  onChange={this.handleEngagementDate}
+                >
+                  <Form.Field
+                    control={Input}
+                    moment={this.state.moment}
+                    value={this.state.EngagementDate.format('YYYY-MM-DD')}
+                    placeholder="Select a Date..."
+                    Icon={false}
+                  />
+                </DatetimePickerTrigger>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Engagement Letter Signed?</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Engagement Letter Signed?</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field
                   control={Checkbox}
@@ -454,15 +491,16 @@ export default class DealDetails extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Estimated Announcement Date</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Estimated Announcement Date</Grid.Column>
               <Grid.Column width="6">
                 <DatetimePickerTrigger
-                  moment={this.state.moment}
+                  moment={this.state.AnnounceDate}
                   onChange={this.handleAnnounceDate}
                 >
                   <Form.Field
                     control={Input}
-                    type="date"
+                    moment={this.state.moment}
                     value={this.state.AnnounceDate.format('YYYY-MM-DD')}
                     placeholder="Select a Date..."
                     Icon={false}
@@ -472,34 +510,35 @@ export default class DealDetails extends Component {
               <Grid.Column width="1">(Optional)</Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Estimated Closing Date</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Estimated Closing Date</Grid.Column>
               <Grid.Column width="6">
                 <DatetimePickerTrigger
-                  moment={this.state.moment}
+                  moment={this.state.ClosingDate}
                   onChange={this.handleClosingDate}
                 >
                   <Form.Field
                     control={Input}
-                    type="date"
+                    moment={this.state.moment}
                     value={this.state.ClosingDate.format('YYYY-MM-DD')}
                     placeholder="Select a Date..."
                     Icon={false}
-                    readOnly
                   />
                 </DatetimePickerTrigger>
               </Grid.Column>
               <Grid.Column width="1">(Optional)</Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">CS commitment Date</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">CS commitment Date</Grid.Column>
               <Grid.Column width="6">
                 <DatetimePickerTrigger
-                  moment={this.state.moment}
+                  moment={this.state.CommitmentDate}
                   onChange={this.handleCommitmentDate}
                 >
                   <Form.Field
                     control={Input}
-                    type="date"
+                    moment={this.state.moment}
                     value={this.state.CommitmentDate.format('YYYY-MM-DD')}
                     placeholder="Select a Date..."
                     Icon={false}
@@ -509,15 +548,16 @@ export default class DealDetails extends Component {
               <Grid.Column width="1">(Optional)</Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Estimated Completion Date</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Estimated Completion Date</Grid.Column>
               <Grid.Column width="6">
                 <DatetimePickerTrigger
-                  moment={this.state.moment}
+                  moment={this.state.CompletionDate}
                   onChange={this.handleCompletionDate}
                 >
                   <Form.Field
                     control={Input}
-                    type="date"
+                    moment={this.state.moment}
                     value={this.state.CompletionDate.format('YYYY-MM-DD')}
                     placeholder="Select a Date..."
                     Icon={false}

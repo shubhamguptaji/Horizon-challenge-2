@@ -31,6 +31,7 @@ export default class DealTeam extends Component {
           <Grid.Row>
             <Grid.Column width="2" />
             <Grid.Column width="3">
+              You
               <Image
                 src="https://react.semantic-ui.com/images/wireframe/square-image.png"
                 // {
@@ -41,6 +42,7 @@ export default class DealTeam extends Component {
                 size="tiny"
                 circular
               />
+              <Grid.Column width="2" />
               <Grid.Column width="2">
                 Department {this.state.user.department}
               </Grid.Column>
@@ -58,7 +60,8 @@ export default class DealTeam extends Component {
           </Grid.Row>
           <Divider />
           <Grid.Row>
-            <Grid.Column width="3">Sponsor</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Sponsor</Grid.Column>
             <Grid.Column width="6">
               <AutoComplete
                 autoFocus={true}
@@ -89,21 +92,6 @@ export default class DealTeam extends Component {
                 style={{ width: '100%' }}
               />
             </Grid.Column>
-            {this.state.AddRoleCount === 0 ? (
-              <Grid.Column width="1">
-                <Button
-                  onClick={() => {
-                    this.setState({
-                      AddRoleCount: this.state.AddRoleCount + 1
-                    });
-                  }}
-                >
-                  Add
-                </Button>
-              </Grid.Column>
-            ) : (
-              <div />
-            )}
           </Grid.Row>
         </Grid>
         {Array.apply(null, { length: this.state.AddRoleCount }).map((e, i) => (
@@ -140,31 +128,33 @@ export default class DealTeam extends Component {
                   style={{ width: '100%' }}
                 />
               </Grid.Column>
-              {this.state.AddRoleCount === i ? (
-                <Grid.Column width="1">
-                  <Button
-                    onClick={() => {
-                      this.setState({
-                        AddRoleCount: this.state.AddRoleCount + 1
-                      });
-                    }}
-                  >
-                    Add
-                  </Button>
-                </Grid.Column>
-              ) : (
-                <div />
-              )}
             </Grid.Row>
           </Grid>
         ))}
         <Grid columns="2">
           <Grid.Row>
             <Grid.Column width="3" />
+            <Grid.Column width="6">
+              <Button
+                onClick={() => {
+                  this.setState({
+                    AddRoleCount: this.state.AddRoleCount + 1
+                  });
+                }}
+              >
+                Add
+              </Button>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+        <Grid columns="2">
+          <Grid.Row>
+            <Grid.Column width="3" />
           </Grid.Row>
           <Divider />
           <Grid.Row>
-            <Grid.Column width="3">Banker</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Banker</Grid.Column>
             <Grid.Column width="6">
               <AutoComplete
                 autoFocus={true}
@@ -196,21 +186,6 @@ export default class DealTeam extends Component {
                 style={{ width: '100%' }}
               />
             </Grid.Column>
-            {this.state.AddBankerCount === 0 ? (
-              <Grid.Column width="1">
-                <Button
-                  onClick={() => {
-                    this.setState({
-                      AddBankerCount: this.state.AddBankerCount + 1
-                    });
-                  }}
-                >
-                  Add
-                </Button>
-              </Grid.Column>
-            ) : (
-              <div />
-            )}
           </Grid.Row>
         </Grid>
         {Array.apply(null, { length: this.state.AddBankerCount }).map(
@@ -248,25 +223,26 @@ export default class DealTeam extends Component {
                     style={{ width: '100%' }}
                   />
                 </Grid.Column>
-                {this.state.AddBankerCount === i ? (
-                  <Grid.Column width="1">
-                    <Button
-                      onClick={() => {
-                        this.setState({
-                          AddBankerCount: this.state.AddBankerCount + 1
-                        });
-                      }}
-                    >
-                      Add
-                    </Button>
-                  </Grid.Column>
-                ) : (
-                  <div />
-                )}
               </Grid.Row>
             </Grid>
           )
         )}
+        <Grid columns="2">
+          <Grid.Row>
+            <Grid.Column width="3" />
+            <Grid.Column width="6">
+              <Button
+                onClick={() => {
+                  this.setState({
+                    AddBankerCount: this.state.AddBankerCount + 1
+                  });
+                }}
+              >
+                Add
+              </Button>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </div>
     );
   }

@@ -12,7 +12,8 @@ class ProductDetails extends Component {
     return (
       <Grid columns="2">
         <Grid.Row>
-          <Grid.Column width="3">Product Category</Grid.Column>
+          <Grid.Column width="1" />
+          <Grid.Column width="2">Product Category</Grid.Column>
           <Grid.Column width="6">
             <Form.Field
               control={Select}
@@ -23,7 +24,8 @@ class ProductDetails extends Component {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width="3">Product</Grid.Column>
+          <Grid.Column width="1" />
+          <Grid.Column width="2">Product</Grid.Column>
           <Grid.Column width="6">
             <Form.Field
               control={Select}
@@ -34,7 +36,8 @@ class ProductDetails extends Component {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width="3">Project Name</Grid.Column>
+          <Grid.Column width="1" />
+          <Grid.Column width="2">Project Name</Grid.Column>
           <Grid.Column width="6">
             <Form.Field
               control={Input}
@@ -51,7 +54,8 @@ class ProductDetails extends Component {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width="3">Product Stage</Grid.Column>
+          <Grid.Column width="1" />
+          <Grid.Column width="2">Product Stage</Grid.Column>
           <Grid.Column width="6">
             <Form.Field
               control={Select}
@@ -64,7 +68,8 @@ class ProductDetails extends Component {
         {this.state.projectStage === 'Lost' ||
         this.state.projectStage === 'Dead' ? (
           <Grid.Row>
-            <Grid.Column width="3">Reason</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Reason</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
@@ -78,7 +83,8 @@ class ProductDetails extends Component {
         )}
         {this.state.projectStage === 'Lost' ? (
           <Grid.Row>
-            <Grid.Column width="3">To whom we lost</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">To whom we lost</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Select}

@@ -46,6 +46,7 @@ class ProjectDetails extends Component {
   };
 
   render() {
+    console.log(this.props);
     const children = this.state.response.map(item => (
       <Option
         key={item.id}
@@ -62,7 +63,8 @@ class ProjectDetails extends Component {
         <Grid columns="2">
           {this.state.showInputBox === true ? (
             <Grid.Row>
-              <Grid.Column width="3">Client</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Client</Grid.Column>
               <Grid.Column width="6">
                 <AutoComplete
                   autoFocus={true}

@@ -23,7 +23,8 @@ class LegalEntity extends Component {
               <div />
             )}
             <Grid.Row>
-              <Grid.Column width="3">Client Legal Entity</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Client Legal Entity</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field
                   control={Select}
@@ -82,7 +83,8 @@ class LegalEntity extends Component {
               <div />
             )}
             <Grid.Row>
-              <Grid.Column width="3">CS Booking Entity</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">CS Booking Entity</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field
                   control={Select}
@@ -92,7 +94,8 @@ class LegalEntity extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width="3">Entity KYC Status</Grid.Column>
+              <Grid.Column width="1" />
+              <Grid.Column width="2">Entity KYC Status</Grid.Column>
               <Grid.Column width="6">
                 <Form.Field
                   control={Select}

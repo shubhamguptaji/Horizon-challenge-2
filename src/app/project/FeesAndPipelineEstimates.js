@@ -32,6 +32,7 @@ export default class FeesAndPipelineEstimates extends Component {
       <div>
         <Grid columns="2">
           <Grid.Row>
+            <Grid.Column width="1" />
             <Grid.Column width="7">
               These Revenues are owned by the project sponsor group and will be
               reflected on all management pipeline reports, including the group
@@ -39,6 +40,7 @@ export default class FeesAndPipelineEstimates extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
+            <Grid.Column width="1" />
             <Grid.Column width="7">
               Need help? View IBCM probability guidelines
             </Grid.Column>
@@ -48,7 +50,8 @@ export default class FeesAndPipelineEstimates extends Component {
           (e, i) => (
             <Grid columns="2" key={i}>
               <Grid.Row>
-                <Grid.Column width="3">Rev. Type</Grid.Column>
+                <Grid.Column width="1" />
+                <Grid.Column width="2">Rev. Type</Grid.Column>
                 <Grid.Column width="6">
                   <Form.Field
                     control={Select}
@@ -58,7 +61,8 @@ export default class FeesAndPipelineEstimates extends Component {
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
-                <Grid.Column width="3">Estimated Gross Revenue</Grid.Column>
+                <Grid.Column width="1" />
+                <Grid.Column width="2">Estimated Gross Revenue</Grid.Column>
                 <Grid.Column width="6">
                   <Form.Field
                     control={Input}
@@ -70,7 +74,8 @@ export default class FeesAndPipelineEstimates extends Component {
                 <Grid.Column width="1">(USD 000s)</Grid.Column>
               </Grid.Row>
               <Grid.Row>
-                <Grid.Column width="3">Estimated Revenue Date</Grid.Column>
+                <Grid.Column width="1" />
+                <Grid.Column width="2">Estimated Revenue Date</Grid.Column>
                 <Grid.Column width="6">
                   <DatetimePickerTrigger
                     moment={this.state.moment}
@@ -107,7 +112,8 @@ export default class FeesAndPipelineEstimates extends Component {
           </Grid.Row>
           <Divider />
           <Grid.Row>
-            <Grid.Column width="3">Gross Spread</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Gross Spread</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
@@ -122,7 +128,8 @@ export default class FeesAndPipelineEstimates extends Component {
             <Grid.Column width="1">%</Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">CS Economics</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">CS Economics</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
@@ -132,7 +139,8 @@ export default class FeesAndPipelineEstimates extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">Management Fees</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Management Fees</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
@@ -147,7 +155,8 @@ export default class FeesAndPipelineEstimates extends Component {
           </Grid.Row>
           <Divider />
           <Grid.Row>
-            <Grid.Column width="3">Equity Registration Status</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Equity Registration Status</Grid.Column>
             <Grid.Column width="6">
               <Form>
                 <Form.Field
@@ -164,7 +173,8 @@ export default class FeesAndPipelineEstimates extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">Filing Date</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Filing Date</Grid.Column>
             <Grid.Column width="6">
               <DatetimePickerTrigger
                 moment={this.state.handleFilingDate}
@@ -182,7 +192,8 @@ export default class FeesAndPipelineEstimates extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">Number of Shares</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Number of Shares</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
@@ -194,7 +205,8 @@ export default class FeesAndPipelineEstimates extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">Price (Per Share)</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Price (Per Share)</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
@@ -205,19 +217,8 @@ export default class FeesAndPipelineEstimates extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">CS Commitment Amount</Grid.Column>
-            <Grid.Column width="6">
-              <Form.Field
-                control={Input}
-                type="number"
-                placeholder="0"
-                style={{ width: '100%' }}
-              />
-            </Grid.Column>
-            <Grid.Column width="1">USD</Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column width="3">CS Hold Amount</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">CS Commitment Amount</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
@@ -229,7 +230,8 @@ export default class FeesAndPipelineEstimates extends Component {
             <Grid.Column width="1">USD</Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">Available for Sale</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">CS Hold Amount</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
@@ -241,7 +243,21 @@ export default class FeesAndPipelineEstimates extends Component {
             <Grid.Column width="1">USD</Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">Mark-to-Market</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Available for Sale</Grid.Column>
+            <Grid.Column width="6">
+              <Form.Field
+                control={Input}
+                type="number"
+                placeholder="0"
+                style={{ width: '100%' }}
+              />
+            </Grid.Column>
+            <Grid.Column width="1">USD</Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Mark-to-Market</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
@@ -252,7 +268,8 @@ export default class FeesAndPipelineEstimates extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">
+            <Grid.Column width="1" />
+            <Grid.Column width="2">
               Facility Fee / Commitment Fee (bps)
             </Grid.Column>
             <Grid.Column width="6">
@@ -266,7 +283,8 @@ export default class FeesAndPipelineEstimates extends Component {
             <Grid.Column width="1">bps</Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width="3">Underwriting Fee (bps)</Grid.Column>
+            <Grid.Column width="1" />
+            <Grid.Column width="2">Underwriting Fee (bps)</Grid.Column>
             <Grid.Column width="6">
               <Form.Field
                 control={Input}
