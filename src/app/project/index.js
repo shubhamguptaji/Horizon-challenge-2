@@ -5,7 +5,7 @@ import DealDetails from './DealDetails';
 import ClientSector from './ClientSector';
 
 export default class CreateNewProject extends Component {
-  state = { activeIndex: 4 };
+  state = { activeIndex: 1};
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps;
