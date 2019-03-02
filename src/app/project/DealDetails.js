@@ -8,7 +8,8 @@ import {
   Icon,
   TextArea,
   Input,
-  Label
+  Label,
+  Checkbox
 } from 'semantic-ui-react';
 import Countries from './Countries';
 import DealRolesAndDescription from './DealRolesAndDescription';
@@ -18,7 +19,7 @@ import ProductType from './ProductType';
 import CSRole from './CSRole';
 import moment from 'moment';
 import { DatetimePickerTrigger } from 'rc-datetime-picker';
-import { Checkbox } from 'antd';
+import 'rc-datetime-picker/dist/picker.css';
 
 export default class DealDetails extends Component {
   state = {
@@ -455,68 +456,73 @@ export default class DealDetails extends Component {
             <Grid.Row>
               <Grid.Column width="3">Estimated Announcement Date</Grid.Column>
               <Grid.Column width="6">
-                <Form.Field
-                  control={Input}
-                  type="date"
-                  value={this.state.AnnounceDate}
-                  placeholder="Select a Date..."
-                  Icon={false}
-                />
                 <DatetimePickerTrigger
                   moment={this.state.moment}
                   onChange={this.handleAnnounceDate}
-                />
+                >
+                  <Form.Field
+                    control={Input}
+                    type="date"
+                    value={this.state.AnnounceDate.format('YYYY-MM-DD')}
+                    placeholder="Select a Date..."
+                    Icon={false}
+                  />
+                </DatetimePickerTrigger>
               </Grid.Column>
               <Grid.Column width="1">(Optional)</Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column width="3">Estimated Closing Date</Grid.Column>
               <Grid.Column width="6">
-                <Form.Field
-                  control={Input}
-                  type="date"
-                  value={this.state.ClosingDate}
-                  placeholder="Select a Date..."
-                  Icon={false}
-                />
                 <DatetimePickerTrigger
                   moment={this.state.moment}
                   onChange={this.handleClosingDate}
-                />
+                >
+                  <Form.Field
+                    control={Input}
+                    type="date"
+                    value={this.state.ClosingDate.format('YYYY-MM-DD')}
+                    placeholder="Select a Date..."
+                    Icon={false}
+                    readOnly
+                  />
+                </DatetimePickerTrigger>
               </Grid.Column>
               <Grid.Column width="1">(Optional)</Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column width="3">CS commitment Date</Grid.Column>
               <Grid.Column width="6">
-                <Form.Field
-                  control={Input}
-                  type="date"
-                  value={this.state.CommitmentDate}
-                  placeholder="Select a Date..."
-                  Icon={false}
-                />
                 <DatetimePickerTrigger
                   moment={this.state.moment}
                   onChange={this.handleCommitmentDate}
-                />
+                >
+                  <Form.Field
+                    control={Input}
+                    type="date"
+                    value={this.state.CommitmentDate.format('YYYY-MM-DD')}
+                    placeholder="Select a Date..."
+                    Icon={false}
+                  />
+                </DatetimePickerTrigger>
               </Grid.Column>
               <Grid.Column width="1">(Optional)</Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column width="3">Estimated Completion Date</Grid.Column>
               <Grid.Column width="6">
-                <Form.Field
-                  control={Input}
-                  type="date"
-                  value={this.state.CompletionDate}
-                  placeholder="Select a Date..."
-                  Icon={false}
-                />
                 <DatetimePickerTrigger
                   moment={this.state.moment}
                   onChange={this.handleCompletionDate}
-                />
+                >
+                  <Form.Field
+                    control={Input}
+                    type="date"
+                    value={this.state.CompletionDate.format('YYYY-MM-DD')}
+                    placeholder="Select a Date..."
+                    Icon={false}
+                  />
+                </DatetimePickerTrigger>
               </Grid.Column>
               <Grid.Column width="1">(Optional)</Grid.Column>
             </Grid.Row>

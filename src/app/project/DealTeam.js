@@ -185,6 +185,7 @@ export default class DealTeam extends Component {
                 ))}
               </AutoComplete>
             </Grid.Column>
+            <Grid.Column width="1">OPTIONAL</Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width="3" />
